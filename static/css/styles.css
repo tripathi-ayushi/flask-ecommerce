@@ -1,0 +1,19 @@
+/* static/css/styles.css */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f7f7f7;
+}
+
+button {
+    padding: 10px 15px;
+    background: #5c67f2;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #4049d4;
+}

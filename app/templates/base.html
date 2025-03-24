@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Flask eCommerce{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="/"><button>🏠 Home</button></a>
+        <a href="/store"><button>🛒 Store</button></a>
+        <a href="/cart"><button>🧾 Cart</button></a>
+        <a href="/register"><button>🧑‍💻 Register</button></a>
+        <a href="/login"><button>🔐 Login</button></a>
+    </nav>
+
+    <hr>
+
+    {% block content %}{% endblock %}
+</body>
+</html>

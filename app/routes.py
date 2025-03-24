@@ -4,12 +4,13 @@ from app import db
 from app.models import User
 from werkzeug.security import generate_password_hash
 from flask_login import login_user
+import requests  # use public APIs
 
 main = Blueprint('main', __name__)
 
 @main.route('/')
 def home():
-    return "<h1>Welcome to the Flask eCommerce Site</h1>"
+    return render_template('home.html')
 
 @main.route('/register', methods=['GET', 'POST'])
 def register():
@@ -32,3 +33,20 @@ def register():
         return redirect(url_for('main.home'))
 
     return render_template('register.html', form=form)
+
+@main.route('/store')
+def store():
+    response = requests.get("https://fakestoreapi.com/products")
+    products = response.json()
+    return render_template("store.html", products=products)
+
+@main.route('/cart')
+def cart():
+    return render_template('cart.html')
+
+@main.route('/checkout-success')
+def checkout_success():
+    return render_template('checkout_success.html')
+
+
+
